@@ -109,6 +109,7 @@ def show_images(images, cols='auto', title=None, scaling=False):
                 number of images. Good if one want to show many.
     """
     n_images = len(images)
+    print(n_images)
     cols = np.round(np.sqrt(n_images)) if cols=='auto' else cols
     rows = np.ceil(n_images/float(cols))
     fig = plt.figure()
@@ -123,9 +124,12 @@ def show_images(images, cols='auto', title=None, scaling=False):
         a.set_yticklabels([])
     if scaling: fig.set_size_inches(np.array(fig.get_size_inches()) * n_images)
     fig.subplots_adjust(wspace=0, hspace=0)
-    plt.show()
+    fig.savefig("lets_see2.png")
+    print(fig.canvas.get_supported_filetypes())
+    # plt.plot()
+    plt.imshow(images[0])
     
-#%%
+#%%1
 if __name__ == '__main__':
     im = get_cat()
     im = np.tile(im, (10, 1, 1, 1))
