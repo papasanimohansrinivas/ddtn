@@ -5,6 +5,13 @@ Created on Wed May 16 17:27:39 2018
 @author: nsde
 """
 #%%
+import sys
+import os
+
+PACKAGE_PARENT = '..'
+SCRIPT_DIR = os.path.dirname(os.path.realpath(os.path.join(os.getcwd(), os.path.expanduser(__file__))))
+sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, PACKAGE_PARENT)))
+
 from ddtn.transformers.setup_CPAB_transformer import setup_CPAB_transformer
 from ddtn.transformers.transformer_util import get_transformer_layer, get_random_theta
 from ddtn.helper.utility import get_cat, show_images
